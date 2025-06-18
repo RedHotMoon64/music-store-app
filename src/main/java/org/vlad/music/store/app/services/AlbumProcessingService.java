@@ -8,7 +8,6 @@ import org.vlad.music.store.app.dtos.PriceDTO;
 import org.vlad.music.store.app.entities.Album;
 import org.vlad.music.store.app.exceptions.AlbumNotFoundException;
 import org.vlad.music.store.app.repositories.AlbumRepository;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,9 +40,9 @@ public class AlbumProcessingService {
         Album album = albumRepository.findById(id).orElseThrow(() -> new AlbumNotFoundException("There is no album with id: " + id));
         priceValidationService.validatePrice(album.getType(), priceDTO.price());
         album.setPrice(priceDTO.price());
-        log.info("Updating album {} 's price...", album.getName());
+        log.info("Updating album {}'s price...", album.getName());
         this.albumRepository.saveAndFlush(album);
-        log.info("Album {} 's price updated to {}", album.getName(), priceDTO);
+        log.info("Album {} 's price updated to {}", album.getName(), priceDTO.price());
     }
 
     private AlbumDetailsDTO mapToDTO(Album album) {

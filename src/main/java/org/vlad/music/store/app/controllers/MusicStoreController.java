@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 import org.vlad.music.store.app.dtos.AlbumDetailsDTO;
 import org.vlad.music.store.app.dtos.PriceDTO;
 import org.vlad.music.store.app.services.AlbumProcessingService;
-
 import java.util.List;
 
 @RestController

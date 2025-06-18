@@ -11,5 +11,4 @@ public record AlbumDetailsDTO(
         AlbumType albumType,
         int price,
         int stock) {
-
 }

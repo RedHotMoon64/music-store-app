@@ -1,5 +1,8 @@
 package org.vlad.music.store.app.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum AlbumType {
     CD( 100),
     TAPE( 120),
@@ -9,9 +12,5 @@ public enum AlbumType {
 
     AlbumType(int priceRange) {
         this.priceRange = priceRange;
-    }
-
-    public int getPriceRange() {
-        return this.priceRange;
     }
 }
