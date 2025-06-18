@@ -1,4 +1,3 @@
 package org.vlad.music.store.app.dtos;
 
-public record PriceDTO() {
-}
+public record PriceDTO(int price) {}

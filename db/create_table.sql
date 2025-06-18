@@ -1,0 +1,9 @@
+CREATE TABLE ALBUM
+(
+	id 	    INTEGER, PRIMARY KEY, NOT NULL,
+	name 	VARCHAR(200), NOT NULL,
+	details VARCHAR(200), NOT NULL,
+	type 	VARCHAR(200),
+	price 	NUMERIC,
+	stock	NUMERIC
+)

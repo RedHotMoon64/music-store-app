@@ -1,8 +1,13 @@
 package org.vlad.music.store.app;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-public class MusicStoreApp {
+@EnableAutoConfiguration
+@SpringBootApplication
+public class MusicStoreApplication {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        SpringApplication.run(MusicStoreApplication.class, args);
     }
 }
