@@ -65,4 +65,11 @@ public class AlbumProcessingService {
         album.setStock(albumDetailsDTO.stock());
         return album;
     }
+
+    public void deleteAlbum(int id) {
+        Album album = albumRepository.findById(id).orElseThrow(() -> new AlbumNotFoundException("There is no album with id: " + id));
+        log.info("Deleting album {}...", album.getName());
+        this.albumRepository.delete(album);
+        log.info("Album {} has been deleted", album.getName());
+    }
 }

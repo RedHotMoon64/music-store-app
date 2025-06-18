@@ -41,10 +41,11 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf(csrf -> csrf.disable())
                     .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("music-store/get-all-albums").hasRole(USER)
-                        .requestMatchers("music-store/add").hasRole(SUPPLIER)
-                        .requestMatchers("music-store/get-album/**").hasRole(VENDOR)
-                        .requestMatchers("music-store/update-price/**").hasRole(VENDOR)
+                            .requestMatchers("music-store/get-all-albums").hasRole(USER)
+                            .requestMatchers("music-store/add").hasRole(SUPPLIER)
+                            .requestMatchers("music-store/get-album/**").hasRole(VENDOR)
+                            .requestMatchers("music-store/update-price/**").hasRole(VENDOR)
+                            .requestMatchers("music-store/delete-album/**").hasRole(ADMIN)
                 .anyRequest().authenticated()
         ).httpBasic(Customizer.withDefaults());
         return httpSecurity.build();
@@ -73,7 +74,7 @@ public class SecurityConfiguration {
         UserDetails admin = User
                 .withUsername(adminUsername)
                 .password(passwordEncoder.encode(adminPassword))
-                .roles(VENDOR, SUPPLIER, USER)
+                .roles(ADMIN, VENDOR, SUPPLIER, USER)
                 .build();
 
         return new InMemoryUserDetailsManager(user, supplier, vendor, admin);

@@ -32,4 +32,9 @@ public class MusicStoreController {
     public void updateAlbumPrice(@RequestBody PriceDTO priceDTO, @PathVariable("id") int id) {
         albumProcessingService.updateAlbumPrice(id, priceDTO);
     }
+
+    @DeleteMapping("/delete-album/{id}")
+    public void deleteAlbume(@PathVariable("id") int id){
+        albumProcessingService.deleteAlbum(id);
+    }
 }
