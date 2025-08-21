@@ -1,6 +1,7 @@
 package org.vlad.music.store.app.controllers;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import org.vlad.AlbumDetailsDTO;
 import org.vlad.music.store.app.dtos.PriceDTO;
@@ -9,6 +10,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@Slf4j
 @RequestMapping("music-store")
 public class MusicStoreController {
     private final AlbumProcessingService albumProcessingService;
